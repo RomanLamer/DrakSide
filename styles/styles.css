@@ -226,7 +226,10 @@ header {
     justify-content: center;
     text-align: right;
 }
-
+img{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .article img {
     width: 700px;
     margin-left: 40px;
