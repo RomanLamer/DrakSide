@@ -34,7 +34,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias beatae ab earum
                 quam adipisci,quos error ut architecto. Error blanditiis facere dolor officia.
             </p>
-            <button class="banner_skroll" id="scrollBtn1">Learn more</button>
+            <button class="banner_skroll" id="scrollBtn11">Learn more</button>
         </section>
     </header>
     <section class="main">
@@ -53,7 +53,7 @@
                      ea reprehenderit nisi, quasi,
                      nobis error? Fuga delectus nulla dolorem eaque suscipit.
                 </p>
-                <button id="scrollBtn2">Lorem, ipsum.</button>
+                <button id="scrollBtn22">Lorem, ipsum.</button>
             </section>
             <section class="article_photo"><img src="./images/img1.jpg" alt="" ></section>
         </section>
@@ -95,13 +95,13 @@
                         </div>
                     </li>
             </ul>
-            <button class="Viewbtn" id="scrollBtn3">View More</button>
+            <button class="Viewbtn" id="scrollBtn33">View More</button>
         </section>
         <div class="break img1"></div>
     </section>  
     <footer class="footer" id="scrollTo3">
         <div class="footer_logo"><img src="./images/logo.png" alt=""></div>
-        <div class="scrolltop" id="myscroll">Scroll to strat</div>
+        <div class="scrolltop" id="myscroll1">Scroll to strat</div>
         <ul class="link_list">
             <li class="link_list_item"></li>
             <li class="link_list_item"></li>
@@ -145,6 +145,13 @@
         const btn3 = document.querySelector('#scrollBtn3');
         const scrolto = document.querySelector("#strat");
         const btn = document.querySelector('#myscroll');
+        
+        
+        const btn11 = document.querySelector('#scrollBtn11');
+        const btn22 = document.querySelector('#scrollBtn22');
+        const btn33 = document.querySelector('#scrollBtn33');
+        const btns = document.querySelector('#myscroll1');
+
 
         function handleButtonClick(el) {
             el.scrollIntoView({block: "center", behavior: "smooth"});
@@ -165,6 +172,10 @@
         btn2.addEventListener('click', myScroll2);   
         btn3.addEventListener('click', myScroll3);   
         btn.addEventListener('click', myScroll);   
+        btn11.addEventListener('click', myScroll1);   
+        btn22.addEventListener('click', myScroll2);   
+        btn33.addEventListener('click', myScroll3);   
+        btns.addEventListener('click', myScroll);   
     </script>
 </body>
 </html>

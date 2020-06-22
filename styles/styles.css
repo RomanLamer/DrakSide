@@ -72,18 +72,21 @@ header {
     display: none;
 }
 
-.nav_menu_item:first-child{
+.nav_menu_item:first-child {
     cursor: context-menu;
     color: #fff;
     font-size: 16px;
 }
-.nav_menu_item:not(:last-child){
+
+.nav_menu_item:not(:last-child) {
     border-bottom: 1px solid gray;
 }
-.nav_menu_item:not(:first-child):hover{
+
+.nav_menu_item:not(:first-child):hover {
     background-color: #fff;
     color: #000;
 }
+
 .nav_menu_item {
     z-index: 998;
     display: inline-block;
@@ -102,17 +105,21 @@ header {
     display: none;
     flex-direction: column;
 }
-.nav_menu input:checked ~ label .trigger i {
+
+.nav_menu input:checked~label .trigger i {
     background-color: #111;
 }
-.nav_menu input:checked ~ label .trigger i::before{
+
+.nav_menu input:checked~label .trigger i::before {
     top: 0;
     transform: rotate(-45deg);
 }
-.nav_menu input:checked ~ label .trigger i::after{
+
+.nav_menu input:checked~label .trigger i::after {
     top: 0;
     transform: rotate(45deg);
 }
+
 .nav_menu input:checked~.nav_menu_main {
     display: flex;
 }
@@ -235,11 +242,45 @@ header {
     font-size: 20px;
 }
 
-.article_content button{
-    padding: 10px 40px;
+.article_content button::before {
+    transition: .3s;
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: -1;
+}
+
+.article_content button {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
     outline: none;
+    padding: 15px 50px;
+    font-size: 20px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
     cursor: pointer;
-    font-size: 16px;
+    transition: color .3s, background-color .3s;
+}
+
+
+.article_content button:hover::after {
+    color: #fff;
+}
+
+.article_content button:hover::before {
+    filter: blur(40px);
+}
+
+.article_content button:hover {
+    background-color: inherit;
+    color: #fff;
 }
 
 .break {
@@ -247,33 +288,37 @@ header {
     width: 100%;
     position: relative;
 }
-.img{
+
+.img {
     background-attachment: fixed;
 }
-.galery::after{
-    -webkit-box-shadow: 0px -140px 92px 111px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px -140px 92px 111px rgba(0,0,0,0.75);
-    box-shadow: 0px -140px 92px 111px rgba(0,0,0,0.75);
+
+.galery::after {
+    -webkit-box-shadow: 0px -140px 92px 111px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px -140px 92px 111px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -140px 92px 111px rgba(0, 0, 0, 0.75);
     position: absolute;
     content: '';
     right: 0;
     top: 0;
     bottom: 100%;
     left: 0;
-    
+
 }
-.galery::before{
-    -webkit-box-shadow: 0px -140px 92px 111px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px -140px 92px 111px rgba(0,0,0,0.75);
-    box-shadow: 0px -140px 92px 111px rgba(0,0,0,0.75);
+
+.galery::before {
+    -webkit-box-shadow: 0px -140px 92px 111px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px -140px 92px 111px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -140px 92px 111px rgba(0, 0, 0, 0.75);
     position: absolute;
     content: '';
     right: 0;
     top: 124%;
     bottom: 0;
     left: 0;
-    
+
 }
+
 .galery {
     position: relative;
     text-align: center;
@@ -291,19 +336,23 @@ header {
 .galery p {
     font-size: 20px;
 }
-.blockList{
+
+.blockList {
     margin-top: 40px;
     display: flex;
     justify-content: space-around;
 }
-.blockList_item{
+
+.blockList_item {
     overflow: hidden;
     position: relative;
 }
-.blockList_item >img{
+
+.blockList_item>img {
     cursor: pointer;
 }
-.block_header{
+
+.block_header {
     position: absolute;
     right: 0;
     left: 0;
@@ -311,7 +360,8 @@ header {
     background-color: #000;
     padding: 25px 0;
 }
-.block_hidedDescr{
+
+.block_hidedDescr {
     color: #000;
     position: absolute;
     background-color: #fff;
@@ -324,65 +374,113 @@ header {
     font-size: 16px;
     height: 200px;
 }
-.up{
+
+.up {
     animation: up .5s;
     bottom: 200px;
 }
-.down{
+
+.down {
     animation: down .5s;
     bottom: 0px;
 }
-.show{
+
+.show {
     animation: showel .5s;
     bottom: 0px;
 }
-.hide{
+
+.hide {
     animation: hideel .5s;
     bottom: -200px;
 }
-@keyframes showel{
-    0%{
+
+@keyframes showel {
+    0% {
         bottom: -200px;
-    }   
-    100%{
+    }
+
+    100% {
         bottom: 0px;
-    }   
+    }
 }
-@keyframes hideel{
-    0%{
+
+@keyframes hideel {
+    0% {
         bottom: 0px;
-    }   
-    100%{
+    }
+
+    100% {
         bottom: -200px;
-    }   
+    }
 }
-@keyframes up{
-    0%{
+
+@keyframes up {
+    0% {
         bottom: 0px;
-    }   
-    100%{
+    }
+
+    100% {
         bottom: 200px;
-    }   
+    }
 }
-@keyframes down{
-    0%{
+
+@keyframes down {
+    0% {
         bottom: 200px;
-    }   
-    100%{
+    }
+
+    100% {
         bottom: 0px;
-    }   
+    }
 }
-.Viewbtn{
-    margin-top: 50px;
-    padding: 10px 40px;
+
+.Viewbtn::before {
+    transition: .3s;
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: -1;
+}
+
+.Viewbtn {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
     outline: none;
-    font-size: 16px;
+    padding: 15px 50px;
+    font-size: 20px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
     cursor: pointer;
+    transition: color .3s, background-color .3s;
 }
-.footer{
-    -webkit-box-shadow: 0px -40px 92px 111px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px -40px 92px 111px rgba(0,0,0,0.75);
-    box-shadow: 0px -40px 92px 111px rgba(0,0,0,0.75);
+
+
+.Viewbtn:hover::after {
+    color: #fff;
+}
+
+.Viewbtn:hover::before {
+    filter: blur(40px);
+}
+
+.Viewbtn:hover {
+    background-color: inherit;
+    color: #fff;
+}
+
+
+.footer {
+    -webkit-box-shadow: 0px -40px 92px 111px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px -40px 92px 111px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px -40px 92px 111px rgba(0, 0, 0, 0.75);
     position: absolute;
     right: 0;
     left: 0;
@@ -390,16 +488,19 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-.footer_logo img{
+
+.footer_logo img {
     width: 40px;
     height: 40px;
     padding: 10px 60px;
 }
-.link_list{
+
+.link_list {
     padding: 10px 60px;
     display: flex;
 }
-.link_list_item:nth-child(1){
+
+.link_list_item:nth-child(1) {
     cursor: pointer;
     margin-right: 30px;
     background-image: url(../images/2015-01-13_1032.png);
@@ -409,7 +510,8 @@ header {
     background-position: -34px 70px;
     transition: .3s;
 }
-.link_list_item:nth-child(2){
+
+.link_list_item:nth-child(2) {
     cursor: pointer;
     margin-right: 30px;
     background-image: url(../images/2015-01-13_1032.png);
@@ -419,7 +521,8 @@ header {
     background-position: -78px 70px;
     transition: .3s;
 }
-.link_list_item:nth-child(3){
+
+.link_list_item:nth-child(3) {
     cursor: pointer;
     margin-right: 30px;
     background-image: url(../images/2015-01-13_1032.png);
@@ -429,7 +532,8 @@ header {
     background-position: -122px 70px;
     transition: .3s;
 }
-.link_list_item:nth-child(4){
+
+.link_list_item:nth-child(4) {
     cursor: pointer;
     margin-right: 30px;
     background-image: url(../images/2015-01-13_1032.png);
@@ -439,22 +543,28 @@ header {
     background-position: -166px 70px;
     transition: .3s;
 }
-.link_list_item:nth-child(1):hover{
+
+.link_list_item:nth-child(1):hover {
     background-position: -34px 119px;
 }
-.link_list_item:nth-child(2):hover{
+
+.link_list_item:nth-child(2):hover {
     background-position: -78px 119px;
 }
-.link_list_item:nth-child(3):hover{
+
+.link_list_item:nth-child(3):hover {
     background-position: -122px 119px;
 }
-.link_list_item:nth-child(4):hover{
+
+.link_list_item:nth-child(4):hover {
     background-position: -166px 119px;
 }
-.scrolltop{
+
+.scrolltop {
     position: absolute;
     color: #fff;
 }
+
 .scrolltop:hover::after {
     color: #fff;
 }
@@ -467,6 +577,7 @@ header {
     background-color: inherit;
     color: #fff;
 }
+
 .scrolltop::after {
     content: '\2039';
     transition: .3s;
@@ -507,11 +618,13 @@ header {
     cursor: pointer;
     transition: color .3s, background-color .3s;
 }
-.img1{
+
+.img1 {
     background-image: url(../images/banner3.jpg);
     background-attachment: fixed;
 }
-.img2{
+
+.img2 {
     background-image: url(../images/banner2.jpg);
-    background-attachment: fixed;   
+    background-attachment: fixed;
 }
