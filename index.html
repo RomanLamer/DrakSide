@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/skroll.css">
+    <title>Dark them</title>
+</head>
+<body> 
+    <div id="scroll"></div>
+    <div id="scrollBg" data-scroll="0%"></div>
+    <header> 
+        <nav class="nav" id="strat">
+            <nav class="nav_logo"><img src="./images/logo.png" alt=""class="logo"></nav>
+            <nav class="nav_menu">
+                <input type="checkbox" class="none" id="check">
+                <label for="check"> 
+                    <div class="trigger"><i></i></div>
+                </label>
+                <ul class="nav_menu_main">
+                    <li class="nav_menu_item">Menu</li>
+                    <li class="nav_menu_item" id="myscroll">Skroll to top</li>
+                    <li class="nav_menu_item" id="scrollBtn1">Skroll1</li>
+                    <li class="nav_menu_item" id="scrollBtn2">Skroll2</li>
+                    <li class="nav_menu_item" id="scrollBtn3">Skroll3</li>
+                </ul>
+            </nav>
+        </nav>
+        <section class="bannerText">
+            <h1 class="banner_header">Lorem,ipsum dolor.</h1>
+            <p class="banner_descr">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias beatae ab earum
+                quam adipisci,quos error ut architecto. Error blanditiis facere dolor officia.
+            </p>
+            <button class="banner_skroll" id="scrollBtn1">Learn more</button>
+        </section>
+    </header>
+    <section class="main">
+        <section class="article" id="scrollTo1">
+            <section class="article_content">
+                <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt numquam amet eum aut fugit.
+                    Perspiciatis reprehenderit culpa possimus et facilis fugit atque debitis at ducimus necessitatibus molestias
+                    eligendi eius corrupti eveniet provident, architecto officia nihil eos optio placeat natus 
+                    laudantium quas dolor voluptates. Perferendis necessitatibus distinctio, reiciendis id exercitationem tenetur!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                     Consectetur amet, minus velit asperiores saepe quo temporibus nesciunt voluptas
+                     ea reprehenderit nisi, quasi,
+                     nobis error? Fuga delectus nulla dolorem eaque suscipit.
+                </p>
+                <button id="scrollBtn2">Lorem, ipsum.</button>
+            </section>
+            <section class="article_photo"><img src="./images/img1.jpg" alt="" ></section>
+        </section>
+        <div class="break img2"></div>
+        <section class="galery" id="scrollTo2">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat doloribus aperiam,
+                unde beatae exercitationem quia repellat aliquid pariatur distinctio magnam suscipit at sequi ipsum,
+                maiores dolore voluptate velit eligendi sit corporis ex, rem facilis similique voluptatem!
+                Rerum vero nisi impedit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptas, dolores co
+                tetur inventore exercitationem sint animi, itaque praesentium, autem delectus sit rerum quas minus possimus
+                dignissimos quibusdam ad odit fuga!
+            </p>
+            <ul class="blockList">
+                <li class="blockList_item">
+                    <img src="./images/destination1.jpg" alt="">
+                    <h3 class="block_header"> Lorem, ipsum dolor.</h3>
+                    <div class="block_hidedDescr">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        . Labore aut tempore eaque nulla qui.
+                         Quos tempora soluta quaerat veritatis dicta!
+                        </div>
+                </li>
+                <li class="blockList_item"><img src="./images/destination2.jpg" alt="">
+                    <h3 class="block_header"> Lorem, ipsum dolor.</h3>
+                    <div class="block_hidedDescr">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        . Labore aut tempore eaque nulla qui.
+                         Quos tempora soluta quaerat veritatis dicta!
+                        </div>
+                    </li>
+                <li class="blockList_item"><img src="./images/destination3.jpg" alt="">
+                    <h3 class="block_header"> Lorem, ipsum dolor.</h3>
+                    <div class="block_hidedDescr">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        . Labore aut tempore eaque nulla qui.
+                         Quos tempora soluta quaerat veritatis dicta!
+                        </div>
+                    </li>
+            </ul>
+            <button class="Viewbtn" id="scrollBtn3">View More</button>
+        </section>
+        <div class="break img1"></div>
+    </section>  
+    <footer class="footer" id="scrollTo3">
+        <div class="footer_logo"><img src="./images/logo.png" alt=""></div>
+        <div class="scrolltop" id="myscroll">Scroll to strat</div>
+        <ul class="link_list">
+            <li class="link_list_item"></li>
+            <li class="link_list_item"></li>
+            <li class="link_list_item"></li>
+            <li class="link_list_item"></li>
+        </ul>
+    </footer>
+
+    <script type="text/javascript">
+        let scroll = document.getElementById('scroll');
+        let windowHeight = document.body.scrollHeight - window.innerHeight;
+        console.log(window.p)
+        window.onscroll = () => {
+            let progress =((window.pageYOffset / windowHeight) * 100);
+            scroll.style.height =progress+'vh';
+            progress = progress >= 100 ? 100 : progress;
+            document.getElementById('scrollBg').dataset.scroll = Math.round(progress)+'%';
+        }
+
+        const blocks = document.querySelectorAll('.blockList_item');
+        for (let i = 0; i < blocks.length; i++) {
+            blocks[i].addEventListener("mouseover",()=>{
+                blocks[i].querySelector('h3').classList.add('up');
+                blocks[i].querySelector('h3').classList.remove('down');
+                blocks[i].querySelector('div').classList.add('show');
+                blocks[i].querySelector('div').classList.remove('hide');
+            });
+            blocks[i].addEventListener("mouseout",()=>{
+                blocks[i].querySelector('h3').classList.add('down');
+                blocks[i].querySelector('h3').classList.remove('up');
+                blocks[i].querySelector('div').classList.remove('show');
+                blocks[i].querySelector('div').classList.add('hide');
+            });
+        }
+
+        const scrolto1 = document.querySelector("#scrollTo1");
+        const btn1 = document.querySelector('#scrollBtn1');
+        const scrolto2 = document.querySelector("#scrollTo2");
+        const btn2 = document.querySelector('#scrollBtn2');
+        const scrolto3 = document.querySelector("#scrollTo3");
+        const btn3 = document.querySelector('#scrollBtn3');
+        const scrolto = document.querySelector("#strat");
+        const btn = document.querySelector('#myscroll');
+
+        function handleButtonClick(el) {
+            el.scrollIntoView({block: "center", behavior: "smooth"});
+        }
+        function myScroll1(){
+            handleButtonClick(scrolto1);
+        }
+        function myScroll2(){
+            handleButtonClick(scrolto2);
+        }
+        function myScroll3(){
+            handleButtonClick(scrolto3);
+        }
+        function myScroll(){
+            handleButtonClick(scrolto);
+        }
+        btn1.addEventListener('click', myScroll1);   
+        btn2.addEventListener('click', myScroll2);   
+        btn3.addEventListener('click', myScroll3);   
+        btn.addEventListener('click', myScroll);   
+    </script>
+</body>
+</html>
