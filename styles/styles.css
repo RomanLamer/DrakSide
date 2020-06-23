@@ -35,7 +35,7 @@ header {
     position: fixed;
     top: 0;
     right: 0;
-    margin-right: 98px;
+    margin-right: 38px;
     margin-top: 27px;
 }
 
@@ -106,7 +106,7 @@ header {
     top: 0;
     margin-top: 20px;
     right: 0;    
-    margin-right: -30px;
+    margin-right: -90px;
     transform: translateX(-40%);
     position: fixed;
     display: none;
