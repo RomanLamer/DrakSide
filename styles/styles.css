@@ -689,6 +689,12 @@ img{
         margin-top: 10px;
         margin-bottom: 40px;
     }
+    .blockList_item{
+        width:300px;
+    }
+    .blockList_item img{
+        width: 300px;
+    }
     .scrolltop{
         transform: unset;
     }
